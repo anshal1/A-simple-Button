@@ -1,0 +1,59 @@
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+.body {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.button {
+  height: 3rem;
+  padding: 0.4em 1.3em;
+  font-size: 22px;
+  border: none;
+  color: #9b5a3c;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-weight: 800;
+  cursor: pointer;
+  position: relative;
+  isolation: isolate;
+  text-transform: uppercase;
+}
+.button::after {
+  content: "";
+  position: absolute;
+  z-index: -2;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(#e2924e 50%, #f2b17d 55%);
+  background-position: -10rem;
+  background-size: cover;
+  background-repeat: no-repeat;
+  transition: all 300ms;
+}
+.button::before {
+  content: "CLICK ME";
+  width: 100%;
+  height: 100%;
+  inset: 0;
+  top: 50%;
+  transform: translateY(-35%);
+  position: absolute;
+  z-index: 1;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-color: #f2b17d;
+  background-position: center;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.button:hover::after {
+  background-position: 0rem;
+}
+/* .button:hover {
+  color: #781f3e;
+} */
